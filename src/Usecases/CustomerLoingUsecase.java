@@ -26,7 +26,7 @@ public static Customer CusLogin() {
 			
 			try {
 				customer = dao.cusLogin(email, password);
-				if (customer.getFirstname()!=null) {
+				if (customer!=null) {
 					System.out.println("Welcome " + customer.getFirstname() + " " + customer.getLastname());
 				}
 				else {

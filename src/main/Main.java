@@ -159,18 +159,23 @@ catch (InputMismatchException e) {
 	}
 	
 	
-	private static void customerLogin() throws CustomerException {
+	private static void customerLogin(){
 		// TODO Auto-generated method stub
 		Customer customer = CustomerLoingUsecase.CusLogin();
 		
 		if (customer == null) {
-			System.out.println("invalid credentital");
+//			System.out.println("invalid credentital");
 			customerLogin();
 		}
 		
 		else {
 			System.out.println("Login Successfull" );
-			customerMethods(customer);
+			try {
+				customerMethods(customer);
+			} catch (CustomerException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}	
 	
